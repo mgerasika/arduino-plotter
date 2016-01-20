@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arduino test page</title>
+        <script type="text/javascript" src="Resources/framework.min.js"></script>
+        <script type="text/javascript" src="Resources/arduino.js"></script>
+        <link rel="stylesheet" href="Resources/index.css"/>
+        <style type="text/css">
+            .header {
+                background-color: #efefef;
+                padding: 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <input type="hidden" id="SessionID"/>
+            
+             <div>
+             <a href="index.htm">Index</a>
+            <a href="doc.htm">Doc</a>
+            <a href="api.htm">API</a>
+            <a href="board.htm">Board</a>
+            <a href="upload.htm">Upload</a>
+            <a href="examples.htm">Examples</a>
+            </div>
+            
+            <table style="width:100%;" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="width: 80%;" valign="top">
+                        <table border=1>
+                        <tr>
+                            <td colspan=4><div class="header">Javascript arduino.js documentation(API)</div></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><div class="header">Name</div></td>
+                             <td><div class="header">Javascript code</div></td> <td><div class="header">Description</div></td>
+                              <td><div class="header">Try It</div></td>
+                              
+                        </tr>
+                        <tr>
+                                <td>Calibrate</td>
+                                      <td><code>
+                                      $arduino.calibrate();
+                                      </code></td><td>This command move burn pen into top left corner.This commands turns x and y engines.Stops when buttons pressed.</td>
+                                <td><input type="button" onclick="onCalibrateClick(this)" value="Calibrate"/></td>
+                            
+                            </tr>
+                            <tr>
+                                <td>Green Led On/Off (13pin)</td>
+                                <td><code>
+                                      $arduino.writeToComPort(msg);
+                                      </code></td>  <td>Set 13 pin on arduino to HIGH or LOW state(turn on/off internal led)</td>
+                                <td><input type="checkbox" onchange="sendLedToComPort(this,this.checked ? 'led:on':'led:off')" value="Green"/></td>
+                              
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td>Motor X left</td>
+                                <td><code>
+                                      $arduino.onMotorX("left");
+                                      $arduino.offMotorX();
+                                      </code></td><td>Start rotating X motor,and moving fire pen to left.</td>
+                                <td><input type="checkbox" onchange="this.checked ? $arduino.onMotorX('left'):$arduino.offMotorX()" value="Green"/></td>
+                                
+                            </tr>
+                            
+                            <tr>
+                                <td>Motor X right</td>
+                                 <td><code>
+                                      $arduino.onMotorX("right");
+                                      $arduino.offMotorX();
+                                      </code></td><td>Start rotating X motor,and moving fire pen to right.</td>
+                                <td><input type="checkbox" onchange="this.checked ? $arduino.onMotorX('right'):$arduino.offMotorX()" value="Green"/></td>
+                                
+                            </tr>
+                            
+                             <tr>
+                                <td>Motor Y up</td>
+                                 <td><code>
+                                      $arduino.onMotorY("up");
+                                      $arduino.offMotorY();
+                                      </code></td>                       <td>Start rotating Y motor,and moving fire pen to up.</td>
+                                <td><input type="checkbox" onchange="this.checked ? $arduino.onMotorY('up'):$arduino.offMotorY()" value="Green"/></td>
+         
+                            </tr>
+                            
+                            <tr>
+                                <td>Motor Y down</td>
+                                 <td><code>
+                                      $arduino.onMotorY("down");
+                                      $arduino.offMotorY();
+                                      </code></td>                                <td>Start rotating Y motor,and moving fire pen to down.</td>
+                                <td><input type="checkbox" onchange="this.checked ? $arduino.onMotorY('down'):$arduino.offMotorY()" value="Green"/></td>
+
+                            </tr>
+                            
+                            
+                             <tr>
+                                <td>Motor Z up</td>
+                                 <td><code>
+                                      $arduino.onMotorZ("up");
+                                      $arduino.offMotorZ();
+                                      </code></td>                       <td>Start rotating Z motor.</td>
+                                <td><input type="checkbox" onchange="this.checked ? $arduino.onMotorZ('up'):$arduino.offMotorZ()" value="Green"/></td>
+         
+                            </tr>
+                            
+                            <tr>
+                                <td>Motor Z down</td>
+                                 <td><code>
+                                      $arduino.onMotorZ("down");
+                                      $arduino.offMotorZ();
+                                      </code></td>                                <td>Start rotating Z motor.</td>
+                                <td><input type="checkbox" onchange="this.checked ? $arduino.onMotorZ('down'):$arduino.offMotorZ()" value="Green"/></td>
+
+                            </tr>
+                            
+                            <tr>
+                                <td>Move to XY</td>
+                                 <td><code>
+                                      $arduino.moveXY(x,y);
+                                      </code></td><td>Moving fire pen to x,y coordinate.</td>
+                                <td><input type="text" onblur="onMoveXYClick(this)" value="10:10"/></td>
+                                
+                            </tr>
+                            
+                            <tr>
+                                <td>Draw point</td>
+                                <td><code>
+                                      $arduino.drawPoint(x,y);
+                                      </code></td><td>draw point intox x,y coordinate.</td>
+                                <td><input type="text" onblur="onDrawPointClick(this)" value="10:10"/></td>
+                                
+                            </tr>
+                            
+                            <tr>
+                                <td>Draw line</td>
+                                <td><code>
+                                      $arduino.drawLine(x1,y1,x2,y2);
+                                      </code></td>   <td>Draw line.</td>
+                                <td><input type="text" onblur="onDrawLine(this,event)" value="1:1:10:10"/></td>
+                             
+                            </tr>
+                            
+                            
+                             <tr>
+                                <td>Print</td>
+                                <td><code>
+                                var arr = [];<br />
+                                arr.push({type:"point",x:10,y:10});<br />
+                                arr.push({type:"point",x:20,y:20});<br />
+                                      $arduino.print(arr);
+                                      </code></td>   <td>Print figure.</td>
+                                <td><input type="button" onclick="onPrint(this,event)" value="Print"/></td>
+                             
+                            </tr>
+                        </table>
+                        
+                    </td>
+                    <td valign="top">
+                        <div class="header">-#-Serial Port Output</div>
+                        <div id="res"></div>
+                    </td>
+                </tr>
+            </table>
+           
+            
+        </form>
+        
+        <script type="text/javascript">
+            function sendLedToComPort(el, msg) {
+                $arduino.writeToComPort(msg.toString());
+            };
+
+            function onCalibrateClick() {
+                $arduino.calibrate();
+            };
+
+            function onDrawLine(el, ev) {
+                var vals = el.value.split(":");
+                $arduino.drawLine(vals[0],vals[1],vals[2],vals[3]);
+            };
+
+            function onMoveXYClick(el) {
+                var vals = el.value.split(":");
+                $arduino.moveXY(vals[0], vals[1]);
+            };
+
+            function onDrawPointClick(el) {
+                var vals = el.value.split(":");
+                $arduino.drawPoint(vals[0], vals[1]);
+            };
+
+            function onPrint() {
+                var arr = [];
+                arr.push({ type: "point", x: 10, y: 10 });
+                arr.push({ type: "point", x: 20, y: 20 });
+                $arduino.print(arr);
+            };
+
+        </script>
+    </body>
+</html>

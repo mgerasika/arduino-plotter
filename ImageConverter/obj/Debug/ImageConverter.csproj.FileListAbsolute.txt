@@ -1,0 +1,12 @@
+P:\Dropbox\Projects\Plotter\ImageConverter\bin\Debug\1.jpg
+P:\Dropbox\Projects\Plotter\ImageConverter\bin\Debug\ImageConverter.exe
+P:\Dropbox\Projects\Plotter\ImageConverter\bin\Debug\ImageConverter.pdb
+P:\Dropbox\Projects\Plotter\ImageConverter\obj\Debug\ResolveAssemblyReference.cache
+P:\Dropbox\Projects\Plotter\ImageConverter\obj\Debug\ImageConverter.exe
+P:\Dropbox\Projects\Plotter\ImageConverter\obj\Debug\ImageConverter.pdb
+D:\Projects\C#\Plotter\ImageConverter\bin\Debug\1.jpg
+D:\Projects\C#\Plotter\ImageConverter\bin\Debug\ImageConverter.exe
+D:\Projects\C#\Plotter\ImageConverter\bin\Debug\ImageConverter.pdb
+D:\Projects\C#\Plotter\ImageConverter\obj\Debug\ImageConverter.exe
+D:\Projects\C#\Plotter\ImageConverter\obj\Debug\ImageConverter.pdb
+D:\Projects\C#\Plotter\ImageConverter\obj\Debug\ImageConverter.csprojResolveAssemblyReference.cache

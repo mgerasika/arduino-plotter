@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Http Server</title>
+        <script type="text/javascript" src="Resources/framework.min.js"></script>
+        <script type="text/javascript" src="Resources/utils.js"></script>
+        <link rel="stylesheet" href="Resources/index.css"/>
+        <script type="text/javascript" src="Resources/arduino.js"></script>
+        <script type="text/javascript">
+            function uploadComplete(str) {
+                if (str) {
+                    var json = JSON.parse(str);
+                    document.getElementById("img1").src = "blank.png";
+                    document.getElementById("img1").src = js.url(json.Src) + "?time=" + (new Date()).getTime();
+                    document.getElementById("imgData1").innerHTML = "width=" + json.width + " height=" + json.height;
+                }
+            };
+
+            function resizeImage() {
+                js.ajax.post(js.mvcUrl("App", "ResizeImage"), { url: "upload/out.bmp" }, function(json, src) {
+                    document.getElementById("img2").src = "blank.png";
+                    document.getElementById("img2").src = js.url(json.Src) + "?time=" + (new Date()).getTime();
+                    document.getElementById("imgData2").innerHTML = "width=" + json.width + " height=" + json.height;
+                });
+            };
+
+
+            function convertToBlack() {
+                js.ajax.post(js.mvcUrl("App", "ConvertToBlack"), { url: "upload/out2.bmp" }, function(json, src) {
+                    document.getElementById("img3").src = "blank.png";
+                    document.getElementById("img3").src = js.url(json.Src) + "?time=" + (new Date()).getTime();
+                    document.getElementById("imgData3").innerHTML = "width=" + json.width + " height=" + json.height;
+
+                    window._arr = json.Items;
+                    console.log("receive items count = " + json.Length);
+                });
+            };
+
+            function startPrint() {
+                $arduino.print(window._arr, function(x, y) {
+                document.getElementById("res").innerHTML += "drawPoint:" + x + ":" + y + " leave points: " +
+                window._arr.length + "<br/>";
+                });
+            };
+
+        </script>
+    </head>
+    <body>
+        <input type="hidden" id="SessionID" value=""/>
+         <div>
+         <a href="index.htm">Index</a>
+            <a href="doc.htm">Doc</a>
+            <a href="api.htm">API</a>
+            <a href="board.htm">Board</a>
+            <a href="upload.htm">Upload</a>
+            <a href="examples.htm">Examples</a>
+            </div>
+        <p>
+       This tool can print images that you upload to server.
+       Image convert to array of points and sends over com port via javascript/c#
+        </p>
+        <table>
+            <tr>
+                <td>Step 1.Upload small .jpg/.bmp file to server</td>
+                <td><img src="upload/blank.bmp" id="img1" style="border: 1px solid black;width:100px;height: 80px;"/>
+                <div id="imgData1"></div>
+                </td>
+                <td> <form action="App.mvc/Upload" method="POST" enctype="multipart/form-data"  target="hidden_upload" >
+            <input type="file" id="file" name="file" style="width:150px;"/>
+            <input type="submit" value="Upload"/>
+        </form>
+        
+        <IFRAME id="hidden_upload" name=hidden_upload src='' onLoad='var el = js.getFirstChild(this.contentWindow.document.body); if(el){uploadComplete(el.innerHTML)}'
+        style='width:0;height:0;border:0px solid #fff'></IFRAME>    </td>
+            </tr>
+            
+            <tr>
+                <td>Step 2.Resize to 260 x 240 fromat</td>
+                <td><img  src="upload/blank.bmp" id="img2" style="border: 1px solid black;width:100px;height: 80px;"/>
+                <div id="imgData2"></div></td>
+                <td><input type="button"  onclick="resizeImage()" value="ResizeImage"/></td>
+            </tr>
+            
+            
+            <tr>
+                <td>Step 3.Convert to black/white format</td>
+                <td><img  src="upload/blank.bmp" id="img3" style="border: 1px solid black;width:100px;height: 80px;"/>
+                <div id="imgData3"></div></td>
+                <td><input type="button"  onclick="convertToBlack()" value="Convert to Black/White"/></td>
+            </tr>
+            
+            <tr>
+                <td>Step 4.Start printing</td>
+                <td>
+                <div id="res" style="height:100px;width:300px;overflow:auto;border:1px solid black;font-size:10px;"></div></td>
+                <td><input type="button"  onclick="startPrint()" value="Start print"/></td>
+            </tr>
+            <tr style="display:none;">
+                <td>Youtube video</td>
+                <td>
+                    <iframe width="420" height="315" src="http://www.youtube.com/embed/ecVrrNPRtCc" frameborder="0" allowfullscreen></iframe>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        
+  
+        
+       
+        
+    </body>
+</html>

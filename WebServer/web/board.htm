@@ -1,0 +1,37 @@
+﻿.<!DOCTYPE html>
+<html>
+    <head>
+        <title>Http Server</title>
+        <script type="text/javascript" src="Resources/framework.min.js"></script>
+        <script type="text/javascript" src="Resources/board.js"></script>
+          <script type="text/javascript" src="Resources/arduino.js"></script>
+        <link rel="stylesheet" href="Resources/index.css"/>
+        <script type="text/javascript">
+            function start() {
+                $arduino.print($board.getEls(), function(x, y) {
+                    $board.drawPoint(x, y);
+                });
+            };
+
+        </script>
+    </head>
+    <body>
+    
+     <div>
+     <a href="index.htm">Index</a>
+            <a href="doc.htm">Doc</a>
+            <a href="api.htm">API</a>
+            <a href="board.htm">Board</a>
+            <a href="upload.htm">Upload</a>
+            <a href="examples.htm">Examples</a>
+            </div>
+            
+        <input type="hidden" id="SessionID"/>
+        <form>
+           <input type="button" value="Start" onclick="start()" />
+            <div class="board" id="board"></div>
+              
+            <div id="res" style="display:none;"></div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Http Server</title>
+        <script type="text/javascript" src="Resources/framework.min.js"></script>
+        <script type="text/javascript" src="Resources/utils.js"></script>
+        <script type="text/javascript" src="Resources/hex.js"></script>
+        <link rel="stylesheet" href="Resources/index.css"/>
+    </head>
+    <body>
+        <input type="hidden" id="SessionID"/>
+        <p>Simple App to create hex symbos for LCD 1602</p>
+        <table>
+            <tr>
+                <td id="td1"></td>
+                <td valign="top">
+                    <input type="text" id="result" style="width:300px;" />
+                </td>
+                <td valign="top">
+                    <input type="button" value="Clear" onclick="$hex.clear();" />
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
