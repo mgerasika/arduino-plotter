@@ -47,3 +47,6 @@ D:\Projects\C#\Plotter\WebServer\bin\Debug\MvcEx.pdb
 D:\Projects\C#\Plotter\WebServer\bin\Debug\ImageConverter.pdb
 D:\Projects\C#\Plotter\WebServer\bin\Debug\Newtonsoft.Json.pdb
 D:\Projects\C#\Plotter\WebServer\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\git\arduino-plotter\WebServer\bin\Debug\WebPlotter.exe.config
+D:\Projects\git\arduino-plotter\WebServer\obj\Debug\WebPlotter.exe
+D:\Projects\git\arduino-plotter\WebServer\obj\Debug\WebPlotter.pdb

@@ -10,3 +10,5 @@ D:\Projects\C#\Plotter\ImageConverter\bin\Debug\ImageConverter.pdb
 D:\Projects\C#\Plotter\ImageConverter\obj\Debug\ImageConverter.exe
 D:\Projects\C#\Plotter\ImageConverter\obj\Debug\ImageConverter.pdb
 D:\Projects\C#\Plotter\ImageConverter\obj\Debug\ImageConverter.csprojResolveAssemblyReference.cache
+D:\Projects\git\arduino-plotter\ImageConverter\obj\Debug\ImageConverter.exe
+D:\Projects\git\arduino-plotter\ImageConverter\obj\Debug\ImageConverter.pdb
