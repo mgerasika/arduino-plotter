@@ -1,175 +1,380 @@
 ﻿<!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Http Server</title>
+<html lang="en">
 
-    <script type="text/javascript" src="data/framework.txt"></script>
+<head>
 
-    <link rel="stylesheet" href="data/index.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+        }
+
+       
+    </style>
 </head>
-<body>
-<style type="text/css">
-    img {
-        display: block;
-        width: 40%;
-    }
-    video {
-        display: block;
-    }
-    body {
-        margin: 1em;
-        padding: 1em;
-    }
-</style>
+
+<body і>
 
 
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Wood Printer</h1>
+                    <hr class="small">
+                    <span class="subheading">Випалювач по дереву на arduino</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-preview">
+    <h3 class="post-subtitle">
+        Загальна ідея
+    </h3>
+    <p class="post-meta">
+
+        <p>У цій статі буде розглянуто приклад побудови 2д принтера на arduino</p>
+        <li>
+            Ітак спершу загальна ідея.Буде такий собі пристрій,який зможе випалювати картинки на
+            деревяній поверхні.Картинки можна буде самому малювати або використовувати існуючі з певною конвертацією.
+            Але спершу тре побудувати механіку бо без неі нікуди.
+            І так за основу механіки вирішив взяти мебельні направляючі для шухляд.
+
+        </li>
+        З залізноі частини необхідно:
+        <ol>
+            <li>Ардуіно</li>
+            <li>3 моторчики із вискомик крутящим моментом і низькою швидкістю.Мною було обран 300 оборотні двигуни і 1 кг крутящий момент</li>
+            <li>Драйвери для керування двигунами</li>
+            <li>100w тороідальний трансформатор(можна і інакший) і регулятор напруги до нього</li>
+            <li>Мебельні направляючі для шухляд</li>
+            <li>Доска для основи</li>
+            <li>Болти,гайки і усілякі зєднувачі</li>
+            <li>Підшибники і тримачі підшипбників</li>
+            <li>12в блок живлення для моторчиків</li>
+        </ol>
+
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/8_sHBTDxNY855E87OhyW9oWeOikGIFx07J6JGGXK6JU.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/oa2oVT5R2qs2-V2sJ_uiOVQh9kiRhzqYOn3tCyAIbQc.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/DUsP6k8PvdXio3oqDMf7_A0SH5PqtbTF1r2e_F70SfM.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/Rb_Mt2QY37aqp4QrIr0MlAoQdMtp0mAIkpyMsUT0PqM.jpg" class="preview-image">
+        </p>
+
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/0GI4ItVheXhxbQGiLMrZWLiEI8G0bnJWkBkcQoca20s.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/4MeJFr7rJPqIMhykPKjt9Lo7YsVyvXY3XBY34g7DcAA.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/4MeJFr7rJPqIMhykPKjt9Lo7YsVyvXY3XBY34g7DcAA_002.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/nS-Wp3jfYuGRDkuUvcnHNBikUPnJDUEd3vSURvv-HoQ.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/RnMtPd3PdB_mL-YnJOQqEo4AWKqbxrh2w19tFkOqdfA.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/NvvmckwQ9eaTSBfuug8UXVcLGQTEiAj4LL4aFIBMmlA.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/5lZeSX7v8SUidy3t9ef49ODcJ7PT_QR5lGwFDNsdN5E.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/BndhzjG6Almab6KtzOgkeaiFFIHLpAiEbDum447zmA8.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/aFhbAgOZ1DtvqKECxqHNJg_aDu2WJwJJT8Bsb0qo1DM.jpg" class="preview-image">
+        </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/7Rh1_LOy_Y5khuhCYNsXHHWQXCKUwv5jRzPnERREmfc.jpg" class="preview-image">
+        </p>
 
 
+    </p>
+</div>
+<hr>
 
 
-<p>У цій статі буде розглянуто приклад побудови 2д принтера на arduino</p>
-                <li>Ітак спершу загальна ідея.Буде такий собі пристрій,який зможе випалювати картинки на
-                    деревяній поверхні.Картинки можна буде самому малювати або використовувати існуючі з певною конвертацією.
-                    Але спершу тре побудувати механіку бо без неі нікуди.
-                    І так за основу механіки вирішив взяти мебельні направляючі для шухляд.
-
-                </li>
-                З залізноі частини необхідно:
-                <ol>
-                    <li>Ардуіно</li>
-                    <li>3 моторчики із вискомик крутящим моментом і низькою швидкістю.Мною було обран 300 оборотні двигуни і 1 кг крутящий момент</li>
-                    <li>Драйвери для керування двигунами</li>
-                    <li>100w тороідальний трансформатор(можна і інакший) і регулятор напруги до нього</li>
-                    <li>Мебельні направляючі для шухляд</li>
-                    <li>Доска для основи</li>
-                    <li>Болти,гайки і усілякі зєднувачі</li>
-                    <li>Підшибники і тримачі підшипбників</li>
-                    <li>12в блок живлення для моторчиків</li>
-                </ol>
-
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/8_sHBTDxNY855E87OhyW9oWeOikGIFx07J6JGGXK6JU.jpg" class="preview-image">
-                </p>
-                 <p>
-                <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/oa2oVT5R2qs2-V2sJ_uiOVQh9kiRhzqYOn3tCyAIbQc.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/DUsP6k8PvdXio3oqDMf7_A0SH5PqtbTF1r2e_F70SfM.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/Rb_Mt2QY37aqp4QrIr0MlAoQdMtp0mAIkpyMsUT0PqM.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/0GI4ItVheXhxbQGiLMrZWLiEI8G0bnJWkBkcQoca20s.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/4MeJFr7rJPqIMhykPKjt9Lo7YsVyvXY3XBY34g7DcAA.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/4MeJFr7rJPqIMhykPKjt9Lo7YsVyvXY3XBY34g7DcAA_002.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/nS-Wp3jfYuGRDkuUvcnHNBikUPnJDUEd3vSURvv-HoQ.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/RnMtPd3PdB_mL-YnJOQqEo4AWKqbxrh2w19tFkOqdfA.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/NvvmckwQ9eaTSBfuug8UXVcLGQTEiAj4LL4aFIBMmlA.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/5lZeSX7v8SUidy3t9ef49ODcJ7PT_QR5lGwFDNsdN5E.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/BndhzjG6Almab6KtzOgkeaiFFIHLpAiEbDum447zmA8.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/aFhbAgOZ1DtvqKECxqHNJg_aDu2WJwJJT8Bsb0qo1DM.jpg" class="preview-image">
-                </p>
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/7Rh1_LOy_Y5khuhCYNsXHHWQXCKUwv5jRzPnERREmfc.jpg" class="preview-image">
-                </p>
-                <p>
-                   <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/xE2bNIIZo2_D2QoJQ0ujl5m-ECRQ7_8V5UOq4gy8fQ8.jpg" class="preview-image">
-                </p>
+<div class="post-preview">
+    <a href="post.html">
+        <h2 class="post-title">
+            Результати
+        </h2>
+    </a>
+    <p class="post-meta">
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/xE2bNIIZo2_D2QoJQ0ujl5m-ECRQ7_8V5UOq4gy8fQ8.jpg" class="preview-image">
+        </p>
 
 
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/LP5Xpe1jkPOuv5dbR38BD-MUfHLKBg2EVNpFdYFQYNs.jpg" class="preview-image">
-                </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/LP5Xpe1jkPOuv5dbR38BD-MUfHLKBg2EVNpFdYFQYNs.jpg" class="preview-image">
+        </p>
 
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/NOMqftSqU-BXFQQGIwvKdRR4T7tCdU4qHJkMEgsb57E.jpg" class="preview-image">
-                </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/NOMqftSqU-BXFQQGIwvKdRR4T7tCdU4qHJkMEgsb57E.jpg" class="preview-image">
+        </p>
 
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/AH7J30KdWoTXD_OpAVEKaGkvNbEZR6ZSIcal8y8SAOM.jpg" class="preview-image">
-                </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/AH7J30KdWoTXD_OpAVEKaGkvNbEZR6ZSIcal8y8SAOM.jpg" class="preview-image">
+        </p>
 
-                <p>
-                    <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/AH7J30KdWoTXD_OpAVEKaGkvNbEZR6ZSIcal8y8SAOM.jpg" class="preview-image">
-                </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/AH7J30KdWoTXD_OpAVEKaGkvNbEZR6ZSIcal8y8SAOM.jpg" class="preview-image">
+        </p>
 
-                   <p>
-                <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/baqn8FEGmJAJ9G2OknCIJfL55XfCeV3wfCGDjCgaBds.jpg" class="preview-image">
-                </p>
-
-
-                <p>
-                    <img data-reactid=".i.0.0.0" style="visibility: visible;" src="data/cZMUHg6ady5xa11vJ0FtIuClyyYwLYrDC-DfbLgys9o.png" class="preview-image">
-                </p>
-
-                <p>
-
-                    <img data-reactid=".i.0.0.0" style="visibility: visible;" src="data/615AT6An-WkpcSJC_2E646ybDq2WEj-FxW8vMNymhEk.png" class="preview-image">
-                </p>
+        <p>
+            <img data-reactid=".7.0.0.0" style="visibility: visible;" src="data/baqn8FEGmJAJ9G2OknCIJfL55XfCeV3wfCGDjCgaBds.jpg" class="preview-image">
+        </p>
+    </p>
+</div>
 
 
-
-                <p>
-
-                    <img data-reactid=".i.0.0.0" style="visibility: visible;" src="data/zhll-KY_qKbF0HHcDNtAYhGw2SNKEMgI4kA_tTfW7Vo.png" class="preview-image">
-                </p>
-
-                <p>
-
-                    <img data-reactid=".i.0.0.0" style="visibility: visible;" src="data/V4-Zjg6Fa2Dju3uX7vbD1_wBNIu3rW7m0cpgIBoxlss.png" class="preview-image">
-                </p>
+<hr>
 
 
+<div class="post-preview">
+    <a href="post.html">
+        <h2 class="post-title">
+            Документація API
+        </h2>
+    </a>
+    <p class="post-meta">
+        <p>
+            <img data-reactid=".i.0.0.0" style="visibility: visible;" src="data/cZMUHg6ady5xa11vJ0FtIuClyyYwLYrDC-DfbLgys9o.png" class="preview-image">
+        </p>
+    </p>
+</div>
 
 
+<hr>
 
 
-
-                <p>Kалібрація випалювача</p>
-
-<p><iframe src="data/TS7h1gLxG-g.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe></p>
-
-
-<p><iframe src="data/doDtrAC19BQ.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe></p>
-
-
-                <p>Робота випалювача</p>
-                <p>
-                     <iframe src="data/bHK2WK5ox9U.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
-                </p>
-
-                <p><iframe src="data/vdgd12gj5so.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe></p>
-
-                <p> <iframe src="data/6bESdtULQ2o.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe></p>
-               
-
-                <p>Спроба малювати криві лінії</p>
-
-                <p><iframe src="data/Fu2AN3U7fWI.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe></p>
-
-                <p> <iframe src="data/ZgDFk8PtQoo.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe></p>
-               
+<div class="post-preview">
+    <a href="post.html">
+        <h2 class="post-title">
+            JavaScript API
+        </h2>
+    </a>
+    <p class="post-meta">
+        <p>
+            <img data-reactid=".i.0.0.0" style="visibility: visible;" src="data/615AT6An-WkpcSJC_2E646ybDq2WEj-FxW8vMNymhEk.png" class="preview-image">
+        </p>
 
 
+    </p>
+</div>
 
-           
+
+<hr>
+
+<div class="post-preview">
+    <a href="post.html">
+        <h2 class="post-title">
+            Завантаження фотографій
+        </h2>
+    </a>
+    <p class="post-meta">
+        <p>
+
+            <img data-reactid=".i.0.0.0" style="visibility: visible;" src="data/zhll-KY_qKbF0HHcDNtAYhGw2SNKEMgI4kA_tTfW7Vo.png" class="preview-image">
+        </p>
+
+    </p>
+</div>
 
 
-</body></html>
+<hr>
+
+
+<div class="post-preview">
+    <a href="post.html">
+        <h2 class="post-title">
+            Малювання Фотографій
+        </h2>
+    </a>
+    <p class="post-meta">
+        <p>
+
+            <img data-reactid=".i.0.0.0" style="visibility: visible;" src="data/V4-Zjg6Fa2Dju3uX7vbD1_wBNIu3rW7m0cpgIBoxlss.png" class="preview-image">
+        </p>
+    </p>
+</div>
+
+
+<hr>
+
+<div class="post-preview">
+    <a href="post.html">
+        <h2 class="post-title">
+            Kалібрація випалювача
+        </h2>
+    </a>
+    <p class="post-meta">
+
+        <p>
+            <iframe src="data/TS7h1gLxG-g.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
+        </p>
+
+
+        <p>
+            <iframe src="data/doDtrAC19BQ.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
+        </p>
+
+    </p>
+</div>
+
+
+<hr>
+
+<div class="post-preview">
+    <a href="post.html">
+        <h2 class="post-title">
+            Робота випалювача
+        </h2>
+    </a>
+    <p class="post-meta">
+        <p>
+            <iframe src="data/bHK2WK5ox9U.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
+        </p>
+
+        <p>
+            <iframe src="data/vdgd12gj5so.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
+        </p>
+
+        <p>
+            <iframe src="data/6bESdtULQ2o.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
+        </p>
+
+    </p>
+</div>
+
+
+<hr>
+
+<div class="post-preview">
+    <a href="post.html">
+        <h2 class="post-title">
+            Спроба малювати криві лінії
+        </h2>
+    </a>
+    <p class="post-meta">
+        <p>
+            <iframe src="data/Fu2AN3U7fWI.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
+        </p>
+
+        <p>
+            <iframe src="data/ZgDFk8PtQoo.htm" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
+        </p>
+
+
+    </p>
+</div>
+
+
+<hr>
+
+
+</div>
+</div>
+</div>
+
+<hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
