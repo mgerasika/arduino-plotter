@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77158079-1e05-4883-9a3c-3f9004b2d395" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heroku.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +56,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/heroku-website" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git\OLD\arduino-plotter" />
       <recent name="D:\git\OLD\arduino-plotter\heroku-website" />
     </key>
   </component>
@@ -87,7 +92,7 @@
       <workItem from="1576590225567" duration="625000" />
       <workItem from="1576721518490" duration="635000" />
       <workItem from="1577025374184" duration="489000" />
-      <workItem from="1600583947496" duration="3279000" />
+      <workItem from="1600583947496" duration="3577000" />
     </task>
     <servers />
   </component>
