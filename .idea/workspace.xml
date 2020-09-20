@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77158079-1e05-4883-9a3c-3f9004b2d395" name="Default Changelist" comment="" />
+    <list default="true" id="77158079-1e05-4883-9a3c-3f9004b2d395" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +47,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -84,7 +87,7 @@
       <workItem from="1576590225567" duration="625000" />
       <workItem from="1576721518490" duration="635000" />
       <workItem from="1577025374184" duration="489000" />
-      <workItem from="1600583947496" duration="2961000" />
+      <workItem from="1600583947496" duration="3279000" />
     </task>
     <servers />
   </component>
