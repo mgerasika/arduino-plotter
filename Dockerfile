@@ -1,11 +1,13 @@
-FROM node:14-alpine
 
-WORKDIR /usr/src/app
+FROM node:18-alpine
+ENV NODE_ENV=production
 
-COPY package*.json ./
+WORKDIR /app
 
-RUN yarn install
+COPY ["package.json", "package-lock.json*", "./"]
+
+RUN npm install --production
+
 COPY . .
 
-EXPOSE 8080
-CMD [ "yarn",  "start" ]
+CMD [ "node", "index.js" ]

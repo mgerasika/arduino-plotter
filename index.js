@@ -19,10 +19,10 @@ app.set('view engine', 'html');
 
 
 app.get('/', function(request, response) {
-    //response.send('Hello World 2!');
-    response.render('index.html');
+	//response.send('Hello World 2!');
+	response.render('index.html');
 });
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'));
+app.listen(app.get('port') || 80, function() {
+	console.log("Node app is running at localhost:" + app.get('port'));
 });

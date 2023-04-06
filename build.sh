@@ -1,6 +1,6 @@
 #for local testing/or local docker container
-image=video-stream-server-image
-container=video-stream-server-image
+image=arduino-plotter-image
+container=arduino-plotter-container
 port=8002
 
 docker stop $container
