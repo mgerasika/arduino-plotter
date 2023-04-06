@@ -1,20 +1,11 @@
-# Base image
 FROM node:14-alpine
 
-# Set working directory
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# Install dependencies
-RUN yarn
-# Copy application files
-COPY . .
-RUN yarn build
+COPY package*.json ./
 
-# Copy application files
+RUN yarn install
 COPY . .
 
-# Expose port 3000
-EXPOSE 8002
-
-# Start the application
+EXPOSE 8080
 CMD [ "yarn",  "start" ]
